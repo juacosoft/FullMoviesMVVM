@@ -7,22 +7,20 @@ plugins {
 }
 android {
     namespace 'com.juacodev.fullmovies'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.juacodev.fullmovies"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
-        Properties properties = new Properties()
-        properties.load(project.rootProject.file("app/movies.properties").newDataInputStream())
 
-
-        buildConfigField "String", "BASE_URL", properties.getProperty("BASE_URL")
-        buildConfigField "String", "IMAGE_PATH", properties.getProperty("IMAGE_PATH")
-        buildConfigField "String", "YOUTUBE_PATH", properties.getProperty("YOUTUBE_PATH")
-        buildConfigField "String", "YOUTUBE_THUMB", properties.getProperty("YOUTUBE_THUMB")
+        buildConfigField 'String', 'BASE_URL', '"https://api.themoviedb.org/3/"'
+        buildConfigField 'String', 'IMAGE_PATH', '"https://image.tmdb.org/t/p/w500"'
+        buildConfigField 'String','IMAGE_PATH', '"https://www.youtube.com/watch?v="'
+        buildConfigField 'String','YOUTUBE_PATH', '"http://img.youtube.com/vi/"'
+        buildConfigField 'String','API_KEY', '"ea000af542ac38f2dfcbf04eeae3237d"'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -84,8 +82,6 @@ dependencies {
     kapt "androidx.room:room-compiler:2.4.3"
     kapt "android.arch.persistence.room:compiler:1.1.1"
 
-    //youtube third party
-    implementation "com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5"
 
 
     testImplementation 'junit:junit:4.13.2'
