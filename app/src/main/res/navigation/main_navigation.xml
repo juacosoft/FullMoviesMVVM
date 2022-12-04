@@ -12,7 +12,9 @@
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_movieDetailFragment"
-            app:destination="@id/detailsMovieFragment" />
+            app:destination="@id/detailsMovieFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/detailsMovieFragment"
@@ -24,7 +26,9 @@
             app:argType="com.juacodev.fullmovies.domain.models.DMovie" />
         <action
             android:id="@+id/action_detailsMovieFragment_to_viewTrailerFragment"
-            app:destination="@id/viewTrailerFragment" />
+            app:destination="@id/viewTrailerFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/viewTrailerFragment"
