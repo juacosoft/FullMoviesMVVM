@@ -3,6 +3,8 @@ package com.juacodev.fullmovies.di
 import android.content.Context
 import androidx.room.Room
 import com.juacodev.fullmovies.data.database.AppDatabase
+import com.juacodev.fullmovies.data.database.ClasificateMovies
+import com.juacodev.fullmovies.data.database.MoviesDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimension_180dp">180dp</dimen>
+    <dimen name="dimension_138dp">138dp</dimen>
+    <dimen name="dimension_7dp">7dp</dimen>
+    <dimen name="dimension_0dp">0dp</dimen>
+
+    <dimen name="dimension_title01">22sp</dimen>
+    <dimen name="dimension_title02">20sp</dimen>
+    <dimen name="dimension_title03">18sp</dimen>
+    <dimen name="dimension_title_movie">40sp</dimen>
+    <dimen name="dimension_content_movie">12sp</dimen>
+
+    <dimen name="dimension_45dp">45dp</dimen>
+    <dimen name="dimension_30dp">30dp</dimen>
+    <dimen name="dimension_234dp">234dp</dimen>
+    <dimen name="dimension_8dp">8dp</dimen>
+    <dimen name="dimension_20dp">20dp</dimen>
+    <dimen name="dimension_25">25dp</dimen>
+    <dimen name="dimension_10dp">10dp</dimen>
+    <dimen name="dimension_16sp">16sp</dimen>
+    <dimen name="dimension_38dp">38dp</dimen>
+    <dimen name="dimension_17dp">17dp</dimen>
+    <dimen name="dimension_78dp">78dp</dimen>
+</resources>

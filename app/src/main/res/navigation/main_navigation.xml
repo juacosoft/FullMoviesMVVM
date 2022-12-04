@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.juacodev.fullmovies.ui.activities.fragments.homefragment.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_movieDetailFragment"
+            app:destination="@id/detailsMovieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsMovieFragment"
+        android:name="com.juacodev.fullmovies.ui.activities.fragments.detailsmovefragment.DetailsMovieFragment"
+        android:label="DetailsMovieFragment"
+        tools:layout="@layout/fragment_movie_detail">
+        <argument
+            android:name="movie"
+            app:argType="com.juacodev.fullmovies.domain.models.DMovie" />
+        <action
+            android:id="@+id/action_detailsMovieFragment_to_viewTrailerFragment"
+            app:destination="@id/viewTrailerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewTrailerFragment"
+        android:name="com.juacodev.fullmovies.ui.activities.fragments.viewtrailersmovie.ViewTrailerFragment"
+        android:label="ViewTrailerFragment"
+        tools:layout="@layout/fragment_view_trailer">
+        <argument
+            android:name="movieId"
+            app:argType="integer"/>
+    </fragment>
+</navigation>

@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">FullMovies</string>
+    <string name="app_name">eMovie</string>
+    <string name="content_description_graphic_poster_movie">Graphic poster movie</string>
+    <string name="proximos_estrenos">Próximos estrenos</string>
+    <string name="error_something_wrong">Algo Ocurrio</string>
+    <string name="label_trending">Tendencia</string>
+    <string name="rate_template">⭐️%s</string>
+    <string name="label_movie_plot">MOVIE PLOT</string>
 </resources>

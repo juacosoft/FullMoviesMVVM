@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:paddingHorizontal="@dimen/dimension_25"
+    android:layout_height="wrap_content">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/tv_homeview_title_app"
+        android:layout_width="@dimen/dimension_0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        style="@style/Title01"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dimension_45dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tv_homeview_title_upcoming"
+        android:layout_width="@dimen/dimension_0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/proximos_estrenos"
+        android:layout_marginTop="@dimen/dimension_30dp"
+        style="@style/Title02"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homeview_title_app"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_section_upcoming"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimension_234dp"
+        android:scrollbars="horizontal"
+        android:layout_marginTop="@dimen/dimension_20dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        tools:listitem="@layout/item_movie_layout"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homeview_title_upcoming"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/pb_homeview_upcoming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/rv_section_upcoming"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rv_section_upcoming"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:indicatorColor="?colorPrimary"
+        android:visibility="gone"
+        android:indeterminate="true"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_homeview_title_trending"
+        android:layout_width="@dimen/dimension_0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/label_trending"
+        style="@style/Title02"
+        app:layout_constraintTop_toBottomOf="@+id/rv_section_upcoming"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_section_trending"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimension_234dp"
+        android:scrollbars="horizontal"
+        android:layout_marginTop="@dimen/dimension_20dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        tools:listitem="@layout/item_movie_layout"
+        app:layout_constraintTop_toBottomOf="@+id/tv_homeview_title_trending"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/pb_homeview_trending"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/rv_section_trending"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rv_section_trending"
+        app:indicatorColor="?colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

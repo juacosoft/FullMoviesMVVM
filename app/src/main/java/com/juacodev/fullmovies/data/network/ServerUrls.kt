@@ -9,4 +9,5 @@ object ServerUrls {
     const val API_KEY=BuildConfig.API_KEY
     const val IMAGE_PATH=BuildConfig.IMAGE_PATH
     const val YOUTUBE_PATH=BuildConfig.YOUTUBE_PATH
+    const val YOUTUBE_API_KEY=BuildConfig.YOUTUBE_API
 }

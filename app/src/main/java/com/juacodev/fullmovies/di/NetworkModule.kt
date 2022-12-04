@@ -2,6 +2,10 @@ package com.juacodev.fullmovies.di
 
 import com.juacodev.fullmovies.data.network.MoviesApi
 import com.juacodev.fullmovies.data.network.ServerUrls.BASE_URL
+import com.juacodev.fullmovies.data.network.repository.RemoteMoviesRepository
+import com.juacodev.fullmovies.data.network.repository.RemoteRecomendationsMoviesRepository
+import com.juacodev.fullmovies.data.network.repository.RemoteTrailersRepository
+import com.juacodev.fullmovies.data.network.repository.RemoteUpCommingMoviesRepository
 import com.juacodev.fullmovies.utils.Baseinterceptor
 import dagger.Module
 import dagger.Provides
@@ -32,5 +36,21 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideMovieApiClient(retrofit: Retrofit): MoviesApi = retrofit.create(MoviesApi::class.java)
+
+    @Singleton
+    @Provides
+    fun providesGetTopRatedMovies(moviesApi: MoviesApi) = RemoteMoviesRepository(moviesApi)
+
+    @Singleton
+    @Provides
+    fun providesGetUpcommingMovies(moviesApi: MoviesApi) = RemoteUpCommingMoviesRepository(moviesApi)
+
+    @Singleton
+    @Provides
+    fun providesGetRecomendationsMovies(moviesApi: MoviesApi) = RemoteRecomendationsMoviesRepository(moviesApi)
+
+    @Singleton
+    @Provides
+    fun providesGetVideos(moviesApi: MoviesApi) = RemoteTrailersRepository(moviesApi)
 
 }

@@ -4,6 +4,8 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 android {
     namespace 'com.juacodev.fullmovies'
@@ -18,8 +20,8 @@ android {
 
         buildConfigField 'String', 'BASE_URL', '"https://api.themoviedb.org/3/"'
         buildConfigField 'String', 'IMAGE_PATH', '"https://image.tmdb.org/t/p/w500"'
-        buildConfigField 'String','IMAGE_PATH', '"https://www.youtube.com/watch?v="'
         buildConfigField 'String','YOUTUBE_PATH', '"http://img.youtube.com/vi/"'
+        buildConfigField 'String', 'YOUTUBE_API', '"AIzaSyC38DjJ7UIgz2fU5doxdAbFUAkVmR_FzHY"'
         buildConfigField 'String','API_KEY', '"ea000af542ac38f2dfcbf04eeae3237d"'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -82,9 +84,26 @@ dependencies {
     kapt "androidx.room:room-compiler:2.4.3"
     kapt "android.arch.persistence.room:compiler:1.1.1"
 
-
+    //youtube player
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:11.1.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+    //testing
+    //mockito
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+    testImplementation 'org.mockito:mockito-inline:3.12.4'
+    //mockk
+    testImplementation 'io.mockk:mockk:1.12.0'
+    //livedata
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+    //coroutines
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2'
+    //truth
+    testImplementation 'com.google.truth:truth:1.1.3'
+
+    //room
+    testImplementation 'androidx.room:room-testing:2.4.0-alpha04'
 }
